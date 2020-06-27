@@ -1,12 +1,19 @@
+@font-face{
+  font-family: "kikakana";
+  src:url("Kikakana-21-Regular.otf") format("woff");
+}
 h1 a, h2 a {
-    color: #C25100;
-    font-family: 'Lobster'
+    color: #284258;
+    font-family: "kikakana";
 }
 body{
   padding-left: 15px;
+  background-image: url("back.jpg");
+  background-size: cover;
+
 }
 .page-header {
-    background-color: #C25100;
+    /*background-color: #C25100;*/
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
@@ -22,11 +29,11 @@ body{
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: "kikakana", cursive;
 }
 
 .date {
-    color: #828282;
+    color: white;
 }
 
 .save {
@@ -49,5 +56,5 @@ h1, h2, h3, h4 {
 }
 
 .post h2 a, .post h2 a:visited {
-    color: #000000;
+    color: #284258;
 }
