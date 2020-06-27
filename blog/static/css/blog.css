@@ -2,14 +2,19 @@
   font-family: "kikakana";
   src:url("Kikakana-21-Regular.otf") format("woff");
 }
+@font-face{
+  font-family: "dotfont";
+  src:url("JF-Dot-k12x10.ttf") format("woff");
+}
 h1 a, h2 a {
     color: #284258;
-    font-family: "kikakana";
+    font-family: "kikakana","dotfont";
 }
 body{
   padding-left: 15px;
   background-image: url("back.jpg");
-  background-size: cover;
+  background-repeat: repeat-y;
+  background-size: 100% auto;
 
 }
 .page-header {
@@ -29,11 +34,12 @@ body{
 }
 
 h1, h2, h3, h4 {
-    font-family: "kikakana", cursive;
+    font-family: "dotfont","kikakana", cursive;
 }
 
 .date {
     color: white;
+    font-family:"dotfont"
 }
 
 .save {

@@ -1,31 +1,71 @@
-{% load static %}
-<html>
-    <head>
-        <title>Django Girls blog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext"rel="stylesheet"type="text/css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    </head>
-    <body>
-        <div class="page-header">
-            <h1><a href="/">DJANGO GIRLS BLOG</a></h1>
-        </div>
-        <div class="content container">
-    <div class="row">
-        <div class="col-md-8">
-            {% for post in posts %}
-                <div class="post">
-                    <div class="date">
-                        <p>published: {{ post.published_date }}</p>
-                    </div>
-                    <h2><a href="">{{ post.title }}</a></h2>
-                    <p>{{ post.text|linebreaksbr }}</p>
+    {% load static %}
+    <html>
+        <head>
+            <title>Django Girls blog</title>
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+            <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext"rel="stylesheet"type="text/css">
+            <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+            <script type="text/javascript">
+              $(document).ready(function(){
+                  $('.slider').bxSlider({
+                    auto: true,
+                    pause: 3000,
+                });
+            });
+            </script>
+
+        </head>
+        <body>
+            <div class="page-header">
+                <h1><a href="/">DJANGO GIRLS BLOG</a></h1>
+            </div>
+            <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+              <h2><a>▼ 記録</a></h2>
+              <div class="slider">
+              <img src="../../static/css/img1.JPG" width="504" height="378" alt="">
+              <img src="../../static/css/img2.JPG" width="504" height="378" alt="">
+              <img src="../../static/css/img3.JPG" width="504" height="378" alt="">
+              <img src="../../static/css/img4.JPG" width="504" height="378" alt="">
+              </div>
+
+
+              <!-- 折り畳み展開ポインタ -->
+                <div onclick="obj=document.getElementById('open').style; obj.display=(obj.display=='none')?'block':'none';">
+                <h2><a style="cursor:pointer;">▼ 投稿記事を見る</a></h2>
                 </div>
-            {% endfor %}
+
+                <!--// 折り畳み展開ポインタ -->
+
+                <!-- 折り畳まれ部分 -->
+                <div id="open" style="display:none;clear:both;">
+
+                <!--ここの部分が折りたたまれる＆展開される部分になります。
+                自由に記述してください。-->
+                {% for post in posts %}
+                    <div class="post">
+                        <div class="date">
+                            <p>published: {{ post.published_date }}</p>
+                        </div>
+                        <h2><a href="">{{ post.title }}</a></h2>
+                        <p>{{ post.text|linebreaksbr }}</p>
+                    </div>
+                {% endfor %}
+
+                </div>
+                <!--// 折り畳まれ部分 -->
+
+
+
+            </div>
         </div>
     </div>
-</div>
 
-    </body>
-</html>
+        </body>
+    </html>
