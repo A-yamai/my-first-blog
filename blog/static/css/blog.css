@@ -1,10 +1,10 @@
 @font-face{
   font-family: "kikakana";
-  src:url("Kikakana-21-Regular.otf") format("woff");
+  src:url("fonts/Kikakana-21-Regular.otf") format("woff");
 }
 @font-face{
   font-family: "dotfont";
-  src:url("JF-Dot-k12x10.ttf") format("woff");
+  src:url("fonts/JF-Dot-k12x10.ttf") format("woff");
 }
 h1 a, h2 a {
     color: #284258;
@@ -12,7 +12,7 @@ h1 a, h2 a {
 }
 body{
   padding-left: 15px;
-  background-image: url("back.jpg");
+  background-image: url("image/back.jpg");
   background-repeat: repeat-y;
   background-size: 100% auto;
 
